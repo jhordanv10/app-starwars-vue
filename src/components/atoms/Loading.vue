@@ -13,9 +13,7 @@
 
 <style scoped>
 .loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    margin-top: 30px;
 }
 .loading-figure {
   text-align: center;

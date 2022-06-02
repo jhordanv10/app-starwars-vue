@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h1 class="d-flex justify-center black--text">This is page Films</h1>
+  <div class="container mt-4">
+    <h1 class="d-flex justify-center black--text">Films</h1>
     <Loading v-if="films.length <= 0 " />
     <CardFilms :films="films" v-else/>
   </div>
@@ -33,7 +33,6 @@ export default {
       const url = "https://swapi.dev/api/films/?format=json";
       axios.get(url).then((response) => {
         this.films = response.data.results;
-        console.log(response.data.results);
       });
     },
   },

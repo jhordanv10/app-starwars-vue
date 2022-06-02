@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FilmsView from '../views/FilmsView.vue'
 import StarShipsView from '../views/StarShipsView.vue'
-import VehiclesView from '../views/VehiclesView.vue'
+import PeopleView from '../views/PeopleView.vue'
 
 Vue.use(VueRouter)
 
@@ -24,9 +24,9 @@ const routes = [
     component: StarShipsView
   },
   {
-    path: '/vehicles',
-    name: 'vehicles',
-    component: VehiclesView
+    path: '/people',
+    name: 'people',
+    component: PeopleView
   },
   
 ]
