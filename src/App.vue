@@ -1,36 +1,18 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
+    <v-footer app color="primary" class="d-flex justify-center pt-5 pb-5">
       <v-btn
-        v-for="{id, rute, name, icon} in rutes"
+        text
+        class="mr-2 ml-2 rounded-50"
+        :color="color"
+        v-for="{ id, rute, icon, color } in rutes"
         :key="id"
         @click="selectRute(rute)"
       >
-        <span class="mr-2">{{ name }} </span>
-        <v-icon>{{ icon }}</v-icon>
+        <v-icon :class="color">{{ icon }}</v-icon>
+        <!-- <v-text>{{name}}</v-text> -->
       </v-btn>
-    </v-app-bar>
+    </v-footer>
 
     <v-main>
       <router-view />
@@ -41,17 +23,45 @@
 <script>
 export default {
   name: "App",
+
+  props: {
+    name: String,
+  },
   data: () => ({
     rutes: [
-      { id: 1, name: "home", rute: "/", icon:"mdi-home" },
-      { id: 1, name: "films", rute: "/films", icon:"mdi-video" },
-      { id: 1, name: "starships", rute: "/starships", icon:"mdi-star" },
-      { id: 1, name: "vehicles", rute: "/vehicles", icon:"mdi-car" },
+      {
+        id: 1,
+        name: "home",
+        rute: "/",
+        icon: "mdi-home",
+        color: "red--text",
+      },
+      {
+        id: 2,
+        name: "films",
+        rute: "/films",
+        icon: "mdi-video",
+        color: "red--text",
+      },
+      {
+        id: 3,
+        name: "starships",
+        rute: "/starships",
+        icon: "mdi-star",
+        color: "red--text",
+      },
+      {
+        id: 4,
+        name: "vehicles",
+        rute: "/vehicles",
+        icon: "mdi-car",
+        color: "red--text",
+      },
     ],
   }),
   methods: {
-    selectRute(rute) {
-      this.$router.push(rute);
+    selectRute(r) {
+      this.$router.push(r);
     },
   },
 };

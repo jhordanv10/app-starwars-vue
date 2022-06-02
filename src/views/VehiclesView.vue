@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
-    <h1>This is page Vehicles</h1>
+  <div class="container ">
+    <h1 class="d-flex justify-center">This is page Vehicles</h1>
   </div>
 </template>
